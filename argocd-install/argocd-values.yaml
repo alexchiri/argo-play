@@ -1,0 +1,4 @@
+configs:
+  repositories:
+    apps-repo:
+      url: https://github.com/alexchiri/argo-play.git
