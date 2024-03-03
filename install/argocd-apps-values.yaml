@@ -14,7 +14,7 @@ applications:
       valueFiles:
       - values.yaml
       - ../argocd-values.yaml
-    path: argocd-install/argo-cd
+    path: install/argo-cd
     repoURL: https://github.com/alexchiri/argo-play.git
     targetRevision: HEAD
   syncPolicy:
@@ -32,7 +32,7 @@ applications:
       valueFiles:
       - values.yaml
       - ../argocd-apps-values.yaml
-    path: argocd-install/argocd-apps
+    path: install/argocd-apps
     repoURL: https://github.com/alexchiri/argo-play.git
     targetRevision: HEAD
   syncPolicy:
