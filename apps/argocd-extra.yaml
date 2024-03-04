@@ -4,14 +4,14 @@ metadata:
   name: argocd-extra
   namespace: argocd
 spec:
-  project: argocd
+  project: infra
   source:
     repoURL: https://github.com/alexchiri/argo-play.git
     path: extra/argocd-extra
     targetRevision: HEAD
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: argocd
+    namespace: infra
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
