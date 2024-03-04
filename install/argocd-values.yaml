@@ -1,4 +1,7 @@
 configs:
+  params:
+    server.insecure: true
+    server.disable.auth: true
   repositories:
     apps-repo:
       url: https://github.com/alexchiri/argo-play.git
