@@ -10,12 +10,12 @@ spec:
   - match: Host(`127.0.0.1`) && PathPrefix(`/harbor`)
     kind: Rule
     services:
-    - name: harbor-harbor-portal
+    - name: harbor-portal
       port: 80
   - match: Host(`127.0.0.1`) && PathPrefix(`/harbor/api/`, `/harbor/service/`, `/harbor/v2/`, `/harbor/chartrepo/`, `/harbor/c/`)
     kind: Rule
     services:
-    - name: harbor-harbor-core
+    - name: harbor-core
       port: 80
   tls:
     secretName: localhost-tls-secret
