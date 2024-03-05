@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: harbor-extra
+  namespace: argocd
+spec:
+  project: infra
+  source:
+    repoURL: https://github.com/alexchiri/argo-play.git
+    path: extra/harbor-extra
+    targetRevision: HEAD
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: infra
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true

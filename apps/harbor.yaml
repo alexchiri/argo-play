@@ -13,14 +13,9 @@ spec:
       releaseName: harbor
       valuesObject:
         expose:
+          type: clusterIP
           tls:
             enabled: false
-          ingress:
-            hosts:
-              core: 127.0.0.1
-            annotations:
-              ingress.kubernetes.io/ssl-redirect: null
-              nginx.ingress.kubernetes.io/ssl-redirect: null
         externalURL: https://127.0.0.1/harbor
   destination:
     server: "https://kubernetes.default.svc"
