@@ -52,7 +52,7 @@ spec:
             port: 8888
             expose: true
             exposedPort: 8888
-    destination:
+  destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
   syncPolicy:
