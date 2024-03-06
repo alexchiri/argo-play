@@ -15,3 +15,7 @@ spec:
     warn: false
   sourceRepos:
   - '*'
+  syncPolicy:
+    automated: {}
+    syncOptions:
+    - CreateNamespace=true
