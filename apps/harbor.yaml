@@ -16,7 +16,7 @@ spec:
           type: clusterIP
           tls:
             enabled: false
-        externalURL: https://127.0.0.1/harbor
+        externalURL: https://127.0.0.1:8888
   destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
