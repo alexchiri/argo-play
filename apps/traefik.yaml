@@ -15,7 +15,44 @@ spec:
         providers:
           kubernetesCRD:    
             allowCrossNamespace: true
-  destination:
+        ports:
+          traefik:
+            port: 9000            
+            expose: false           
+            exposedPort: 9000
+            protocol: TCP
+            exposeInternal: false
+          web:
+            port: 8000
+            expose: true
+            exposedPort: 80
+            protocol: TCP
+            exposeInternal: false
+          websecure:
+            port: 8443
+            expose: true
+            exposedPort: 443
+            protocol: TCP
+            exposeInternal: false
+            http3:
+              enabled: false
+            tls:
+              enabled: true
+              options: ""
+              certResolver: ""
+              domains: []
+            middlewares: []
+          metrics:
+            port: 9100
+            expose: false
+            exposedPort: 9100
+            protocol: TCP
+            exposeInternal: false
+          docker:
+            port: 8888
+            expose: true
+            exposedPort: 8888
+    destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
   syncPolicy:
