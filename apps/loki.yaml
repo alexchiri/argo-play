@@ -11,6 +11,13 @@ spec:
     targetRevision: 5.43.6
     helm:
       releaseName: loki
+      valuesObject:
+        write:
+          replicas: 1
+        read:
+          replicas: 1
+        backend:
+          replicas: 1
   destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
@@ -18,3 +25,4 @@ spec:
     automated: {}
     syncOptions:
       - CreateNamespace=true
+      - ServerSideApply=true
