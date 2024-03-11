@@ -12,11 +12,10 @@ spec:
     helm:
       releaseName: grafana
       valuesObject:
-        grafana:
-          grafana.ini:
-            server:
-              root_url: "https://127.0.0.1/grafana"
-              serve_from_sub_path: true
+        grafana.ini:
+          server:
+            root_url: "https://127.0.0.1/grafana"
+            serve_from_sub_path: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
