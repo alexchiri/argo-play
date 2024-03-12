@@ -12,6 +12,9 @@ spec:
     helm:
       releaseName: loki
       valuesObject:
+        loki:
+          commonConfig:
+            replication_factor: 1
         write:
           replicas: 1
         read:
