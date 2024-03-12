@@ -12,6 +12,23 @@ spec:
     helm:
       releaseName: grafana
       valuesObject:
+        datasources:
+          datasources.yaml:
+            apiVersion: 1
+            datasources:
+              - name: Prometheus
+                type: prometheus
+                url: http://prometheus-server
+                access: proxy
+                isDefault: true
+              - name: Loki
+                type: loki
+                access: proxy
+                url: http://loki-gateway
+                basicAuth: false
+                jsonData:
+                  timeout: 60
+                  maxLines: 1000
         grafana.ini:
           server:
             root_url: "https://127.0.0.1/grafana"
