@@ -18,11 +18,11 @@ spec:
           replicas: 1
         backend:
           replicas: 1
-        gateway:
-          basicAuth:
-            enabled: true
-            username: admin
-            password: admin
+        # gateway:
+        #   basicAuth:
+        #     enabled: true
+        #     username: admin
+        #     password: admin
   destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
