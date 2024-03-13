@@ -1,0 +1,42 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: infra
+  source:
+    chart: grafana
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: 7.3.3
+    helm:
+      releaseName: grafana
+      valuesObject:
+        datasources:
+          datasources.yaml:
+            apiVersion: 1
+            datasources:
+              - name: Prometheus
+                type: prometheus
+                url: http://prometheus-server
+                access: proxy
+                isDefault: true
+              - name: Loki
+                type: loki
+                access: proxy
+                url: http://loki-gateway
+                basicAuth: false
+                jsonData:
+                  timeout: 60
+                  maxLines: 1000
+        grafana.ini:
+          server:
+            root_url: "https://127.0.0.1/grafana"
+            serve_from_sub_path: true
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: infra
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true

@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana
+  namespace: infra
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`127.0.0.1`) && PathPrefix(`/grafana`)
+      priority: 10
+      services:
+        - name: grafana
+          port: 80
+          namespace: infra    
+  tls:
+    secretName: localhost-tls-secret

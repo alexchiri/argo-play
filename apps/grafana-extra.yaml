@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana-extra
+  namespace: argocd
+spec:
+  project: infra
+  source:
+    repoURL: https://github.com/alexchiri/argo-play.git
+    path: extra/grafana-extra
+    targetRevision: HEAD
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: infra
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
