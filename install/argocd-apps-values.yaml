@@ -16,7 +16,7 @@ applications:
       - ../argocd-values.yaml
     path: install/argo-cd
     repoURL: https://github.com/alexchiri/argo-play.git
-    targetRevision: HEAD
+    targetRevision: alpha
   syncPolicy:
     automated: {}
     syncOptions:
@@ -35,7 +35,7 @@ applications:
       - ../argocd-apps-values.yaml
     path: install/argocd-apps
     repoURL: https://github.com/alexchiri/argo-play.git
-    targetRevision: HEAD
+    targetRevision: alpha
   syncPolicy:
     automated: {}
     syncOptions:
@@ -49,7 +49,7 @@ applications:
   source:
     path: apps
     repoURL: https://github.com/alexchiri/argo-play.git
-    targetRevision: HEAD
+    targetRevision: alpha
     directory:
       recurse: true
       jsonnet: {}
@@ -66,7 +66,7 @@ applications:
   source:
     path: projects
     repoURL: https://github.com/alexchiri/argo-play.git
-    targetRevision: HEAD
+    targetRevision: alpha
     directory:
       recurse: true
       jsonnet: {}
