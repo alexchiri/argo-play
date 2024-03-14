@@ -32,6 +32,135 @@ spec:
             k8s-views-nodes:
               url: https://raw.githubusercontent.com/dotdc/grafana-dashboards-kubernetes/master/dashboards/k8s-views-nodes.json
               token: ''
+          default:
+            logs:
+              json: |
+                {
+                  "annotations": {
+                    "list": [
+                      {
+                        "builtIn": 1,
+                        "datasource": {
+                          "type": "grafana",
+                          "uid": "-- Grafana --"
+                        },
+                        "enable": true,
+                        "hide": true,
+                        "iconColor": "rgba(0, 211, 255, 1)",
+                        "name": "Annotations & Alerts",
+                        "type": "dashboard"
+                      }
+                    ]
+                  },
+                  "editable": true,
+                  "fiscalYearStartMonth": 0,
+                  "graphTooltip": 0,
+                  "id": 5,
+                  "links": [],
+                  "liveNow": false,
+                  "panels": [
+                    {
+                      "datasource": {
+                        "type": "loki",
+                        "uid": "P8E80F9AEF21F6940"
+                      },
+                      "gridPos": {
+                        "h": 22,
+                        "w": 24,
+                        "x": 0,
+                        "y": 0
+                      },
+                      "id": 1,
+                      "options": {
+                        "dedupStrategy": "none",
+                        "enableLogDetails": true,
+                        "prettifyLogMessage": true,
+                        "showCommonLabels": false,
+                        "showLabels": false,
+                        "showTime": true,
+                        "sortOrder": "Descending",
+                        "wrapLogMessage": false
+                      },
+                      "targets": [
+                        {
+                          "datasource": {
+                            "type": "loki",
+                            "uid": "P8E80F9AEF21F6940"
+                          },
+                          "editorMode": "code",
+                          "expr": "{pod=\"$pod\"}",
+                          "queryType": "range",
+                          "refId": "A"
+                        }
+                      ],
+                      "title": "Pod Logs",
+                      "type": "logs"
+                    }
+                  ],
+                  "refresh": false,
+                  "schemaVersion": 39,
+                  "tags": [],
+                  "templating": {
+                    "list": [
+                      {
+                        "current": {
+                          "selected": true,
+                          "text": "infra",
+                          "value": "infra"
+                        },
+                        "definition": "label_values(namespace)",
+                        "hide": 0,
+                        "includeAll": false,
+                        "multi": false,
+                        "name": "namespace",
+                        "options": [],
+                        "query": {
+                          "qryType": 1,
+                          "query": "label_values(namespace)",
+                          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+                        },
+                        "refresh": 1,
+                        "regex": "",
+                        "skipUrlSync": false,
+                        "sort": 0,
+                        "type": "query"
+                      },
+                      {
+                        "current": {
+                          "selected": true,
+                          "text": "loki-0",
+                          "value": "loki-0"
+                        },
+                        "definition": "label_values({namespace=\"$namespace\"},pod)",
+                        "hide": 0,
+                        "includeAll": false,
+                        "multi": false,
+                        "name": "pod",
+                        "options": [],
+                        "query": {
+                          "qryType": 1,
+                          "query": "label_values({namespace=\"$namespace\"},pod)",
+                          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+                        },
+                        "refresh": 1,
+                        "regex": "",
+                        "skipUrlSync": false,
+                        "sort": 0,
+                        "type": "query"
+                      }
+                    ]
+                  },
+                  "time": {
+                    "from": "2024-03-14T12:24:56.148Z",
+                    "to": "2024-03-15T00:24:56.148Z"
+                  },
+                  "timepicker": {},
+                  "timezone": "",
+                  "title": "Logs",
+                  "uid": "e0f18498-caf6-44b0-98f2-1401479a1b4f",
+                  "version": 2,
+                  "weekStart": ""
+                }
         datasources:
           datasources.yaml:
             apiVersion: 1
