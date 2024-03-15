@@ -143,7 +143,7 @@ spec:
                           "type": "prometheus",
                           "uid": "prometheus"
                         },
-                        "definition": "label_values(namespace)",
+                        "definition": "label_values(kube_namespace_created,namespace)",
                         "hide": 0,
                         "includeAll": false,
                         "multi": false,
@@ -151,7 +151,7 @@ spec:
                         "options": [],
                         "query": {
                           "qryType": 1,
-                          "query": "label_values(namespace)",
+                          "query": "label_values(kube_namespace_created,namespace)",
                           "refId": "PrometheusVariableQueryEditor-VariableQuery"
                         },
                         "refresh": 1,
@@ -166,7 +166,7 @@ spec:
                           "type": "prometheus",
                           "uid": "prometheus"
                         },
-                        "definition": "label_values({namespace=\"$namespace\"},pod)",
+                        "definition": "label_values(kube_pod_info{namespace=\"$namespace\"},pod)",
                         "hide": 0,
                         "includeAll": false,
                         "multi": false,
@@ -174,7 +174,7 @@ spec:
                         "options": [],
                         "query": {
                           "qryType": 1,
-                          "query": "label_values({namespace=\"$namespace\"},pod)",
+                          "query": "label_values(kube_pod_info{namespace=\"$namespace\"},pod)",
                           "refId": "PrometheusVariableQueryEditor-VariableQuery"
                         },
                         "refresh": 1,
@@ -182,6 +182,26 @@ spec:
                         "skipUrlSync": false,
                         "sort": 0,
                         "type": "query"
+                      },
+                      {
+                        "current": {
+                          "selected": false,
+                          "text": "",
+                          "value": ""
+                        },
+                        "description": "Search in the logs",
+                        "hide": 0,
+                        "name": "search",
+                        "options": [
+                          {
+                            "selected": true,
+                            "text": "",
+                            "value": ""
+                          }
+                        ],
+                        "query": "",
+                        "skipUrlSync": false,
+                        "type": "textbox"
                       }
                     ]
                   },
@@ -191,7 +211,7 @@ spec:
                   },
                   "timepicker": {},
                   "timezone": "",
-                  "title": "Logs123",
+                  "title": "Logs",
                   "uid": "loki-logs",
                   "version": 1,
                   "weekStart": ""
