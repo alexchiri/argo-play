@@ -43,25 +43,7 @@ spec:
           default:
             logs:
               json: |
-                {
-                  "__inputs": [
-                    {
-                      "name": "DS_LOKI",
-                      "label": "Loki",
-                      "description": "",
-                      "type": "datasource",
-                      "pluginId": "loki",
-                      "pluginName": "Loki"
-                    },
-                    {
-                      "name": "DS_PROMETHEUS",
-                      "label": "Prometheus",
-                      "description": "",
-                      "type": "datasource",
-                      "pluginId": "prometheus",
-                      "pluginName": "Prometheus"
-                    }
-                  ],
+                {                  
                   "__elements": {},
                   "__requires": [
                     {
@@ -94,8 +76,8 @@ spec:
                       {
                         "builtIn": 1,
                         "datasource": {
-                          "type": "grafana",
-                          "uid": "-- Grafana --"
+                          "type": "datasource",
+                          "uid": "grafana"
                         },
                         "enable": true,
                         "hide": true,
@@ -204,13 +186,13 @@ spec:
                     ]
                   },
                   "time": {
-                    "from": "2024-03-14T12:24:56.148Z",
-                    "to": "2024-03-15T00:24:56.148Z"
+                  "from": "now-1h",
+                  "to": "now"
                   },
                   "timepicker": {},
                   "timezone": "",
                   "title": "Logs",
-                  "uid": "e0f18498-caf6-44b0-98f2-1401479a1b4f",
+                  "uid": "loki-logs",
                   "version": 1,
                   "weekStart": ""
                 }
