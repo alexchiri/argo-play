@@ -186,12 +186,12 @@ spec:
                     ]
                   },
                   "time": {
-                  "from": "now-1h",
-                  "to": "now"
+                    "from": "now-1h",
+                    "to": "now"
                   },
                   "timepicker": {},
                   "timezone": "",
-                  "title": "Logs",
+                  "title": "Logs123",
                   "uid": "loki-logs",
                   "version": 1,
                   "weekStart": ""
