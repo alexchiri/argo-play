@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/alexchiri/argo-play.git
     path: extra/harbor-extra
-    targetRevision: HEAD
+    targetRevision: beta
   destination:
     server: "https://kubernetes.default.svc"
     namespace: infra

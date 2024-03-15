@@ -11,7 +11,7 @@ applications: []
 #   project: guestbook
 #   source:
 #     repoURL: https://github.com/argoproj/argocd-example-apps.git
-#     targetRevision: HEAD
+#     targetRevision: beta
 #     path: guestbook
 #     directory:
 #       recurse: true
@@ -22,7 +22,7 @@ applications: []
 #      targetRevision: 8.5.1
 #    - repoURL: https://github.com/argoproj/argocd-example-apps.git
 #      path: guestbook
-#      targetRevision: HEAD
+#      targetRevision: beta
 #   destination:
 #     server: https://kubernetes.default.svc
 #     namespace: guestbook
@@ -137,7 +137,7 @@ applicationsets: []
 #       project: default
 #       source:
 #         repoURL: https://github.com/argoproj/argocd-example-apps.git
-#         targetRevision: HEAD
+#         targetRevision: beta
 #         path: '{{path}}'
 #       destination:
 #         server: https://kubernetes.default.svc
@@ -201,7 +201,7 @@ itemTemplates: []
 #           project: my-project
 #           source:
 #             repoURL: https://github.com/infra-team/cluster-deployments.git
-#             targetRevision: HEAD
+#             targetRevision: beta
 #             path: guestbook/{{`{{cluster}}`}}
 #           destination:
 #             server: "{{`{{cluster}}`}}"
@@ -231,7 +231,7 @@ itemTemplates: []
 #           project: my-project
 #           source:
 #             repoURL: https://github.com/infra-team/cluster-deployments.git
-#             targetRevision: HEAD
+#             targetRevision: beta
 #             path: guestbook/{{`{{cluster}}`}}
 #           destination:
 #             server: '{{`{{cluster}}`}}'
