@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/alexchiri/argo-play.git
     path: extra/traefik-extra
-    targetRevision: beta
+    targetRevision: HEAD
   destination:
     server: "https://kubernetes.default.svc"
     namespace: infra
